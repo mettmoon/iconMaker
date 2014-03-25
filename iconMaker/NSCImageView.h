@@ -1,5 +1,5 @@
 //
-//  AppDelegate.h
+//  NSCImageView.h
 //  iconMaker
 //
 //  Created by gideon on 12. 9. 21..
@@ -8,8 +8,6 @@
 
 #import <Cocoa/Cocoa.h>
 
-@interface AppDelegate : NSObject <NSApplicationDelegate, NSWindowDelegate>
-
-@property (assign) IBOutlet NSWindow *window;
+@interface NSCImageView : NSImageView
 
 @end

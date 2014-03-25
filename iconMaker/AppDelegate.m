@@ -14,5 +14,7 @@
 {
     // Insert code here to initialize your application
 }
-
+- (void)windowWillClose:(NSNotification *)notification {
+    exit(0);
+}
 @end

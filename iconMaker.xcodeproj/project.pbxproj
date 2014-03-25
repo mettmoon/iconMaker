@@ -13,21 +13,11 @@
 		4E996152160C002F001D28E0 /* Credits.rtf in Resources */ = {isa = PBXBuildFile; fileRef = 4E996150160C002F001D28E0 /* Credits.rtf */; };
 		4E996155160C002F001D28E0 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 4E996154160C002F001D28E0 /* AppDelegate.m */; };
 		4E996158160C0030001D28E0 /* MainMenu.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4E996156160C0030001D28E0 /* MainMenu.xib */; };
-		4E996160160C0030001D28E0 /* SenTestingKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4E99615F160C0030001D28E0 /* SenTestingKit.framework */; };
-		4E996161160C0030001D28E0 /* Cocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4E996141160C002F001D28E0 /* Cocoa.framework */; };
-		4E996169160C0030001D28E0 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 4E996167160C0030001D28E0 /* InfoPlist.strings */; };
-		4E99616C160C0030001D28E0 /* iconMakerTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 4E99616B160C0030001D28E0 /* iconMakerTests.m */; };
+		4E996182160C01F7001D28E0 /* Controller.m in Sources */ = {isa = PBXBuildFile; fileRef = 4E996181160C01F7001D28E0 /* Controller.m */; };
+		4E996186160C0BF4001D28E0 /* NSCImageView.m in Sources */ = {isa = PBXBuildFile; fileRef = 4E996185160C0BF4001D28E0 /* NSCImageView.m */; };
+		BCF02D2018E1BB7400AB1744 /* PathTextField.m in Sources */ = {isa = PBXBuildFile; fileRef = BCF02D1F18E1BB7400AB1744 /* PathTextField.m */; };
+		BCF02D2218E1C03B00AB1744 /* iconSizeSet.plist in Resources */ = {isa = PBXBuildFile; fileRef = BCF02D2118E1C03B00AB1744 /* iconSizeSet.plist */; };
 /* End PBXBuildFile section */
-
-/* Begin PBXContainerItemProxy section */
-		4E996162160C0030001D28E0 /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = 4E996134160C002F001D28E0 /* Project object */;
-			proxyType = 1;
-			remoteGlobalIDString = 4E99613C160C002F001D28E0;
-			remoteInfo = iconMaker;
-		};
-/* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
 		4E99613D160C002F001D28E0 /* iconMaker.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = iconMaker.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -43,12 +33,18 @@
 		4E996153160C002F001D28E0 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		4E996154160C002F001D28E0 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
 		4E996157160C0030001D28E0 /* en */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = en; path = en.lproj/MainMenu.xib; sourceTree = "<group>"; };
-		4E99615E160C0030001D28E0 /* iconMakerTests.octest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = iconMakerTests.octest; sourceTree = BUILT_PRODUCTS_DIR; };
 		4E99615F160C0030001D28E0 /* SenTestingKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SenTestingKit.framework; path = Library/Frameworks/SenTestingKit.framework; sourceTree = DEVELOPER_DIR; };
 		4E996166160C0030001D28E0 /* iconMakerTests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "iconMakerTests-Info.plist"; sourceTree = "<group>"; };
 		4E996168160C0030001D28E0 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		4E99616A160C0030001D28E0 /* iconMakerTests.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = iconMakerTests.h; sourceTree = "<group>"; };
 		4E99616B160C0030001D28E0 /* iconMakerTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = iconMakerTests.m; sourceTree = "<group>"; };
+		4E996180160C01F7001D28E0 /* Controller.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Controller.h; sourceTree = "<group>"; };
+		4E996181160C01F7001D28E0 /* Controller.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Controller.m; sourceTree = "<group>"; };
+		4E996184160C0BF4001D28E0 /* NSCImageView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NSCImageView.h; sourceTree = "<group>"; };
+		4E996185160C0BF4001D28E0 /* NSCImageView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NSCImageView.m; sourceTree = "<group>"; };
+		BCF02D1E18E1BB7400AB1744 /* PathTextField.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PathTextField.h; sourceTree = "<group>"; };
+		BCF02D1F18E1BB7400AB1744 /* PathTextField.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PathTextField.m; sourceTree = "<group>"; };
+		BCF02D2118E1C03B00AB1744 /* iconSizeSet.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = iconSizeSet.plist; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -57,15 +53,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				4E996142160C002F001D28E0 /* Cocoa.framework in Frameworks */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		4E99615A160C0030001D28E0 /* Frameworks */ = {
-			isa = PBXFrameworksBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				4E996160160C0030001D28E0 /* SenTestingKit.framework in Frameworks */,
-				4E996161160C0030001D28E0 /* Cocoa.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -86,7 +73,6 @@
 			isa = PBXGroup;
 			children = (
 				4E99613D160C002F001D28E0 /* iconMaker.app */,
-				4E99615E160C0030001D28E0 /* iconMakerTests.octest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -116,6 +102,12 @@
 			children = (
 				4E996153160C002F001D28E0 /* AppDelegate.h */,
 				4E996154160C002F001D28E0 /* AppDelegate.m */,
+				4E996180160C01F7001D28E0 /* Controller.h */,
+				4E996181160C01F7001D28E0 /* Controller.m */,
+				BCF02D1E18E1BB7400AB1744 /* PathTextField.h */,
+				BCF02D1F18E1BB7400AB1744 /* PathTextField.m */,
+				4E996184160C0BF4001D28E0 /* NSCImageView.h */,
+				4E996185160C0BF4001D28E0 /* NSCImageView.m */,
 				4E996156160C0030001D28E0 /* MainMenu.xib */,
 				4E996148160C002F001D28E0 /* Supporting Files */,
 			);
@@ -129,6 +121,7 @@
 				4E99614A160C002F001D28E0 /* InfoPlist.strings */,
 				4E99614D160C002F001D28E0 /* main.m */,
 				4E99614F160C002F001D28E0 /* iconMaker-Prefix.pch */,
+				BCF02D2118E1C03B00AB1744 /* iconSizeSet.plist */,
 				4E996150160C002F001D28E0 /* Credits.rtf */,
 			);
 			name = "Supporting Files";
@@ -173,32 +166,13 @@
 			productReference = 4E99613D160C002F001D28E0 /* iconMaker.app */;
 			productType = "com.apple.product-type.application";
 		};
-		4E99615D160C0030001D28E0 /* iconMakerTests */ = {
-			isa = PBXNativeTarget;
-			buildConfigurationList = 4E996172160C0030001D28E0 /* Build configuration list for PBXNativeTarget "iconMakerTests" */;
-			buildPhases = (
-				4E996159160C0030001D28E0 /* Sources */,
-				4E99615A160C0030001D28E0 /* Frameworks */,
-				4E99615B160C0030001D28E0 /* Resources */,
-				4E99615C160C0030001D28E0 /* ShellScript */,
-			);
-			buildRules = (
-			);
-			dependencies = (
-				4E996163160C0030001D28E0 /* PBXTargetDependency */,
-			);
-			name = iconMakerTests;
-			productName = iconMakerTests;
-			productReference = 4E99615E160C0030001D28E0 /* iconMakerTests.octest */;
-			productType = "com.apple.product-type.bundle";
-		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
 		4E996134160C002F001D28E0 /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
-				LastUpgradeCheck = 0450;
+				LastUpgradeCheck = 0510;
 				ORGANIZATIONNAME = blesseddeveloper;
 			};
 			buildConfigurationList = 4E996137160C002F001D28E0 /* Build configuration list for PBXProject "iconMaker" */;
@@ -214,7 +188,6 @@
 			projectRoot = "";
 			targets = (
 				4E99613C160C002F001D28E0 /* iconMaker */,
-				4E99615D160C0030001D28E0 /* iconMakerTests */,
 			);
 		};
 /* End PBXProject section */
@@ -227,34 +200,11 @@
 				4E99614C160C002F001D28E0 /* InfoPlist.strings in Resources */,
 				4E996152160C002F001D28E0 /* Credits.rtf in Resources */,
 				4E996158160C0030001D28E0 /* MainMenu.xib in Resources */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		4E99615B160C0030001D28E0 /* Resources */ = {
-			isa = PBXResourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				4E996169160C0030001D28E0 /* InfoPlist.strings in Resources */,
+				BCF02D2218E1C03B00AB1744 /* iconSizeSet.plist in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
-
-/* Begin PBXShellScriptBuildPhase section */
-		4E99615C160C0030001D28E0 /* ShellScript */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputPaths = (
-			);
-			outputPaths = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "# Run the unit tests in this test bundle.\n\"${SYSTEM_DEVELOPER_DIR}/Tools/RunUnitTests\"\n";
-		};
-/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		4E996139160C002F001D28E0 /* Sources */ = {
@@ -262,27 +212,14 @@
 			buildActionMask = 2147483647;
 			files = (
 				4E99614E160C002F001D28E0 /* main.m in Sources */,
+				BCF02D2018E1BB7400AB1744 /* PathTextField.m in Sources */,
 				4E996155160C002F001D28E0 /* AppDelegate.m in Sources */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		4E996159160C0030001D28E0 /* Sources */ = {
-			isa = PBXSourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				4E99616C160C0030001D28E0 /* iconMakerTests.m in Sources */,
+				4E996182160C01F7001D28E0 /* Controller.m in Sources */,
+				4E996186160C0BF4001D28E0 /* NSCImageView.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXSourcesBuildPhase section */
-
-/* Begin PBXTargetDependency section */
-		4E996163160C0030001D28E0 /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			target = 4E99613C160C002F001D28E0 /* iconMaker */;
-			targetProxy = 4E996162160C0030001D28E0 /* PBXContainerItemProxy */;
-		};
-/* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
 		4E99614A160C002F001D28E0 /* InfoPlist.strings */ = {
@@ -324,7 +261,6 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
-				ARCHS = "$(ARCHS_STANDARD_64_BIT)";
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
 				CLANG_CXX_LIBRARY = "libc++";
 				CLANG_ENABLE_OBJC_ARC = YES;
@@ -354,7 +290,6 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
-				ARCHS = "$(ARCHS_STANDARD_64_BIT)";
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
 				CLANG_CXX_LIBRARY = "libc++";
 				CLANG_ENABLE_OBJC_ARC = YES;
@@ -376,11 +311,13 @@
 		4E996170160C0030001D28E0 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				CODE_SIGN_IDENTITY = "";
 				COMBINE_HIDPI_IMAGES = YES;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "iconMaker/iconMaker-Prefix.pch";
 				INFOPLIST_FILE = "iconMaker/iconMaker-Info.plist";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "";
 				WRAPPER_EXTENSION = app;
 			};
 			name = Debug;
@@ -388,42 +325,14 @@
 		4E996171160C0030001D28E0 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				CODE_SIGN_IDENTITY = "";
 				COMBINE_HIDPI_IMAGES = YES;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "iconMaker/iconMaker-Prefix.pch";
 				INFOPLIST_FILE = "iconMaker/iconMaker-Info.plist";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "";
 				WRAPPER_EXTENSION = app;
-			};
-			name = Release;
-		};
-		4E996173160C0030001D28E0 /* Debug */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				BUNDLE_LOADER = "$(BUILT_PRODUCTS_DIR)/iconMaker.app/Contents/MacOS/iconMaker";
-				COMBINE_HIDPI_IMAGES = YES;
-				FRAMEWORK_SEARCH_PATHS = "\"$(DEVELOPER_LIBRARY_DIR)/Frameworks\"";
-				GCC_PRECOMPILE_PREFIX_HEADER = YES;
-				GCC_PREFIX_HEADER = "iconMaker/iconMaker-Prefix.pch";
-				INFOPLIST_FILE = "iconMakerTests/iconMakerTests-Info.plist";
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				TEST_HOST = "$(BUNDLE_LOADER)";
-				WRAPPER_EXTENSION = octest;
-			};
-			name = Debug;
-		};
-		4E996174160C0030001D28E0 /* Release */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				BUNDLE_LOADER = "$(BUILT_PRODUCTS_DIR)/iconMaker.app/Contents/MacOS/iconMaker";
-				COMBINE_HIDPI_IMAGES = YES;
-				FRAMEWORK_SEARCH_PATHS = "\"$(DEVELOPER_LIBRARY_DIR)/Frameworks\"";
-				GCC_PRECOMPILE_PREFIX_HEADER = YES;
-				GCC_PREFIX_HEADER = "iconMaker/iconMaker-Prefix.pch";
-				INFOPLIST_FILE = "iconMakerTests/iconMakerTests-Info.plist";
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				TEST_HOST = "$(BUNDLE_LOADER)";
-				WRAPPER_EXTENSION = octest;
 			};
 			name = Release;
 		};
@@ -446,14 +355,7 @@
 				4E996171160C0030001D28E0 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
-		};
-		4E996172160C0030001D28E0 /* Build configuration list for PBXNativeTarget "iconMakerTests" */ = {
-			isa = XCConfigurationList;
-			buildConfigurations = (
-				4E996173160C0030001D28E0 /* Debug */,
-				4E996174160C0030001D28E0 /* Release */,
-			);
-			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
