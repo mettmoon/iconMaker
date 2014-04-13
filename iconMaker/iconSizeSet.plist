@@ -1,11 +1,3 @@
-<!--
- Type
- 0: 만들지 않음.
- 1: scale 1 만
- 2: scale 1,2 둘다.
- 3: scale 2 만.
- 
- -->
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
 <plist version="1.0">
@@ -13,58 +5,58 @@
 	<dict>
 		<key>Size</key>
 		<integer>29</integer>
-		<key>FileName</key>
-		<string>29pt</string>
 		<key>Type</key>
 		<integer>2</integer>
+		<key>FileName</key>
+		<string>29pt</string>
 	</dict>
 	<dict>
 		<key>Size</key>
 		<integer>40</integer>
+		<key>Type</key>
+		<integer>2</integer>
 		<key>FileName</key>
 		<string>40pt</string>
-		<key>Type</key>
-		<integer>3</integer>
 	</dict>
 	<dict>
 		<key>Size</key>
 		<integer>57</integer>
-		<key>FileName</key>
-		<string>57pt</string>
 		<key>Type</key>
 		<integer>2</integer>
+		<key>FileName</key>
+		<string>57pt</string>
 	</dict>
 	<dict>
 		<key>Size</key>
 		<integer>60</integer>
-		<key>FileName</key>
-		<string>60pt</string>
 		<key>Type</key>
 		<integer>3</integer>
+		<key>FileName</key>
+		<string>60pt</string>
 	</dict>
 	<dict>
 		<key>Size</key>
 		<integer>50</integer>
-		<key>FileName</key>
-		<string>50pt</string>
 		<key>Type</key>
 		<integer>2</integer>
+		<key>FileName</key>
+		<string>50pt</string>
 	</dict>
 	<dict>
 		<key>Size</key>
 		<integer>72</integer>
-		<key>FileName</key>
-		<string>72pt</string>
 		<key>Type</key>
 		<integer>2</integer>
+		<key>FileName</key>
+		<string>72pt</string>
 	</dict>
 	<dict>
 		<key>Size</key>
 		<integer>76</integer>
-		<key>FileName</key>
-		<string>76pt</string>
 		<key>Type</key>
 		<integer>2</integer>
+		<key>FileName</key>
+		<string>76pt</string>
 	</dict>
 </array>
 </plist>
