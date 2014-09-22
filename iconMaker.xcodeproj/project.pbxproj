@@ -15,6 +15,7 @@
 		4E996158160C0030001D28E0 /* MainMenu.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4E996156160C0030001D28E0 /* MainMenu.xib */; };
 		4E996182160C01F7001D28E0 /* Controller.m in Sources */ = {isa = PBXBuildFile; fileRef = 4E996181160C01F7001D28E0 /* Controller.m */; };
 		4E996186160C0BF4001D28E0 /* NSCImageView.m in Sources */ = {isa = PBXBuildFile; fileRef = 4E996185160C0BF4001D28E0 /* NSCImageView.m */; };
+		BCB5EBFF18E2703A00AE5A67 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = BCB5EBFE18E2703A00AE5A67 /* Images.xcassets */; };
 		BCF02D2018E1BB7400AB1744 /* PathTextField.m in Sources */ = {isa = PBXBuildFile; fileRef = BCF02D1F18E1BB7400AB1744 /* PathTextField.m */; };
 		BCF02D2218E1C03B00AB1744 /* iconSizeSet.plist in Resources */ = {isa = PBXBuildFile; fileRef = BCF02D2118E1C03B00AB1744 /* iconSizeSet.plist */; };
 /* End PBXBuildFile section */
@@ -42,6 +43,7 @@
 		4E996181160C01F7001D28E0 /* Controller.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Controller.m; sourceTree = "<group>"; };
 		4E996184160C0BF4001D28E0 /* NSCImageView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NSCImageView.h; sourceTree = "<group>"; };
 		4E996185160C0BF4001D28E0 /* NSCImageView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NSCImageView.m; sourceTree = "<group>"; };
+		BCB5EBFE18E2703A00AE5A67 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
 		BCF02D1E18E1BB7400AB1744 /* PathTextField.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PathTextField.h; sourceTree = "<group>"; };
 		BCF02D1F18E1BB7400AB1744 /* PathTextField.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PathTextField.m; sourceTree = "<group>"; };
 		BCF02D2118E1C03B00AB1744 /* iconSizeSet.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = iconSizeSet.plist; sourceTree = "<group>"; };
@@ -109,6 +111,7 @@
 				4E996184160C0BF4001D28E0 /* NSCImageView.h */,
 				4E996185160C0BF4001D28E0 /* NSCImageView.m */,
 				4E996156160C0030001D28E0 /* MainMenu.xib */,
+				BCB5EBFE18E2703A00AE5A67 /* Images.xcassets */,
 				4E996148160C002F001D28E0 /* Supporting Files */,
 			);
 			path = iconMaker;
@@ -198,6 +201,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				4E99614C160C002F001D28E0 /* InfoPlist.strings in Resources */,
+				BCB5EBFF18E2703A00AE5A67 /* Images.xcassets in Resources */,
 				4E996152160C002F001D28E0 /* Credits.rtf in Resources */,
 				4E996158160C0030001D28E0 /* MainMenu.xib in Resources */,
 				BCF02D2218E1C03B00AB1744 /* iconSizeSet.plist in Resources */,
@@ -311,6 +315,7 @@
 		4E996170160C0030001D28E0 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_IDENTITY = "";
 				COMBINE_HIDPI_IMAGES = YES;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
@@ -325,6 +330,7 @@
 		4E996171160C0030001D28E0 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_IDENTITY = "";
 				COMBINE_HIDPI_IMAGES = YES;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;

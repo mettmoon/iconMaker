@@ -40,15 +40,6 @@
 
 - (void)convert {
 //    [self makeDirectory];
-    NSString *path = [NSString stringWithFormat:@"%@/icons",
-                      self.tfOutput.stringValue];
-    NSFileManager *fileManager = [NSFileManager defaultManager];
-    if (![fileManager fileExistsAtPath:path isDirectory:NULL]) {
-        [fileManager createDirectoryAtPath:path
-               withIntermediateDirectories:YES
-                                attributes:nil
-                                     error:NULL];
-    }
 
     
     NSImage *originImage = self.ivPreview.image;
@@ -60,32 +51,39 @@
     NSString *iconSizeSetPath = [[NSBundle mainBundle] pathForResource:@"iconSizeSet" ofType:@"plist"];
     NSMutableArray *iconSizeArray = [[NSMutableArray alloc] initWithContentsOfFile:iconSizeSetPath];
     for(NSDictionary *dict in iconSizeArray){
+        NSString *directroyString = @"";
+        if(![dict[@"Directory"] isEqualToString:@""]){
+            NSString *path = [NSString stringWithFormat:@"%@/%@",
+                              self.tfOutput.stringValue,dict[@"Directory"]];
+            NSFileManager *fileManager = [NSFileManager defaultManager];
+            if (![fileManager fileExistsAtPath:path isDirectory:NULL]) {
+                [fileManager createDirectoryAtPath:path
+                       withIntermediateDirectories:YES
+                                        attributes:nil
+                                             error:NULL];
+            }
+            directroyString = [NSString stringWithFormat:@"%@/",dict[@"Directory"]];
+        }
+
+
         CGSize size = CGSizeMake([dict[@"Size"] intValue], [dict[@"Size"] intValue]);
-        NSString *fileName = [NSString stringWithFormat:@"icons/%@.png",dict[@"FileName"]];
+        NSString *fileName = [NSString stringWithFormat:@"%@%@.png",directroyString,dict[@"FileName"]];
         switch ([dict[@"Type"] intValue]) {
-            case 0:
-                break;
-            case 1:{
-                resizeImage = [self resizeImage:originImage andSize:size];
+            case 3:{
+                fileName = [NSString stringWithFormat:@"%@%@@3x.png",directroyString,dict[@"FileName"]];
+                resizeImage = [self resizeImage:originImage andSize:CGSizeMake(size.width*3, size.height*3)];
                 [self saveImage:resizeImage andName:fileName];
-                break;
             }
             case 2:{
+                fileName = [NSString stringWithFormat:@"%@%@@2x.png",directroyString,dict[@"FileName"]];
+                resizeImage = [self resizeImage:originImage andSize:CGSizeMake(size.width*2, size.height*2)];
+                [self saveImage:resizeImage andName:fileName];
+            }
+            case 1:{
+                fileName = [NSString stringWithFormat:@"%@%@.png",directroyString,dict[@"FileName"]];
                 resizeImage = [self resizeImage:originImage andSize:size];
                 [self saveImage:resizeImage andName:fileName];
-
-                fileName = [NSString stringWithFormat:@"icons/%@@2x.png",dict[@"FileName"]];
-                resizeImage = [self resizeImage:originImage andSize:CGSizeMake(size.width*2, size.height*2)];
-                [self saveImage:resizeImage andName:fileName];
-                break;
             }
-            case 3:{
-                fileName = [NSString stringWithFormat:@"icons/%@@2x.png",dict[@"FileName"]];
-                resizeImage = [self resizeImage:originImage andSize:CGSizeMake(size.width*2, size.height*2)];
-                [self saveImage:resizeImage andName:fileName];
-                break;
-            }
-                
             default:
                 break;
         }
