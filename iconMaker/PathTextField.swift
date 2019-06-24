@@ -22,11 +22,12 @@ class PathTextField: NSTextField {
         NotificationCenter.default.addObserver(self, selector: #selector(filePathChanged(notification:)), name: .filePathChanged, object: nil)
         
     }
-    func filePathChanged(notification:Notification){
+    @objc func filePathChanged(notification:Notification){
         var path = notification.object as! String
         
         guard let index = path.range(of: "/", options: String.CompareOptions.backwards, range: nil, locale: nil)?.lowerBound else {return}
-        path = path.substring(to: index)
+
+        path = String(path[..<index])
         self.stringValue = path
     }
 }

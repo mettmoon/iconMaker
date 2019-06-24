@@ -22,7 +22,7 @@ class ViewController: NSViewController {
         panel.canChooseDirectories = true
         panel.allowsMultipleSelection = false
         panel.allowedFileTypes = ["png"]
-        if panel.runModal() == NSModalResponseOK {
+        if panel.runModal() == .OK {
             let array = panel.urls
             if let url = array.first {
                 self.tfOutput.stringValue = url.path
@@ -35,7 +35,7 @@ class ViewController: NSViewController {
         Thread.detachNewThreadSelector(#selector(convert), toTarget: self, with: nil)
         
     }
-    func convert(){
+    @objc func convert(){
         guard let originalImage = self.ivPreview.image else {return}
 //        var resizeImage:NSImage? = nil
         
@@ -43,17 +43,17 @@ class ViewController: NSViewController {
         guard let jsonData = try? Data(contentsOf: URL(fileURLWithPath: iconSizeSetPath)) else {return}
         
         guard let object = try? JSONSerialization.jsonObject(with: jsonData, options: JSONSerialization.ReadingOptions.mutableContainers) as? [String:Any] else {return}
-        let imageInfoItems = object!["images"] as! [[String:String]]
+        let imageInfoItems = object["images"] as! [[String:String]]
         
         let directoryPath = String(format: "%@/AppIcon.appiconset", self.tfOutput.stringValue)
         if !FileManager.default.fileExists(atPath: directoryPath) {
             try? FileManager.default.createDirectory(atPath: directoryPath, withIntermediateDirectories: true, attributes: nil)
         }
         var exportJSONObject:[String:Any] = [:]
-        exportJSONObject["info"] = object!["info"]!
+        exportJSONObject["info"] = object["info"]!
         var imagesJSON:[[String:String]] = []
         for imageInfoItem in imageInfoItems {
-            let index = imageInfoItems.index(where: { (object:[String : String]) -> Bool in
+            let index = imageInfoItems.firstIndex(where: { (object:[String : String]) -> Bool in
                 return object == imageInfoItem
             })!
 //            let idiom = imageInfoItem["idiom"]!
@@ -67,7 +67,7 @@ class ViewController: NSViewController {
             let scaleString = imageInfoItem["scale"]!.replacingOccurrences(of: "x", with: "")
             guard let n = NumberFormatter().number(from: scaleString) else {continue}
             
-            let scale:CGFloat = CGFloat(n)
+            let scale:CGFloat = CGFloat(truncating: n)
             let fileName = String(format: "%i.png", index)
             let filePath = String(format: "%@/%@", directoryPath,fileName)
             var infoJSON = imageInfoItem
@@ -106,7 +106,7 @@ class ViewController: NSViewController {
     func saveImageFile(_ image:NSImage, with filePath:String){
         guard let tiffData = image.tiffRepresentation else {return}
         let imageRep = NSBitmapImageRep(data: tiffData)
-        guard let pngData = imageRep?.representation(using: .PNG, properties: [:]) else {return }
+        guard let pngData = imageRep?.representation(using: .png, properties: [:]) else {return }
         let url = URL(fileURLWithPath: filePath)
         
         do {
@@ -126,7 +126,7 @@ extension NSImage {
         resizeImage.lockFocus()
         let originalImage = self
         originalImage.size = scaledSize
-        NSGraphicsContext.current()?.imageInterpolation = .high
+        NSGraphicsContext.current?.imageInterpolation = .high
         let fromRect = NSRect(x: 0, y: 0, width: originalImage.size.width, height: originalImage.size.height)
         originalImage.draw(at: .zero, from: fromRect, operation: .copy, fraction: 1)
         resizeImage.unlockFocus()

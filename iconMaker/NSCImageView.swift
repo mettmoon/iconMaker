@@ -17,7 +17,7 @@ class NSCImageView: NSImageView {
     }
     
     override func draggingEntered(_ sender: NSDraggingInfo) -> NSDragOperation {
-        let a = (NSDragOperation.generic.rawValue & sender.draggingSourceOperationMask().rawValue)
+        let a = (NSDragOperation.generic.rawValue & sender.draggingSourceOperationMask.rawValue)
         if a == NSDragOperation.generic.rawValue {
             return .generic
         }else{
@@ -28,36 +28,38 @@ class NSCImageView: NSImageView {
 //        self.print(sender)
     }
     override func performDragOperation(_ sender: NSDraggingInfo) -> Bool {
-        let pboard = sender.draggingPasteboard()
-        if pboard.types?.contains(NSFilenamesPboardType) == true {
-            let files = pboard.propertyList(forType: NSFilenamesPboardType)
+        let pboard = sender.draggingPasteboard
+        if pboard.types?.contains(.fileURL) == true {
+            let files = pboard.propertyList(forType: .fileURL) as? String
+            print(files)
 //            self.print(files)
         }
-        let types = [NSTIFFPboardType, NSFilenamesPboardType]
+        let types = [NSPasteboard.PasteboardType.tiff, .fileURL]
         guard let desiredType = pboard.availableType(from: types) else {return false}
         guard let carriedData = pboard.data(forType: desiredType) else{
             let myPopup: NSAlert = NSAlert()
             myPopup.messageText = "Sorry, but the past operation failed"
             myPopup.informativeText = "Paste Error"
-            myPopup.alertStyle = NSAlertStyle.warning
+            myPopup.alertStyle = .warning
             myPopup.addButton(withTitle: "OK")
             myPopup.runModal()
             return false
         }
         
-        if desiredType == NSTIFFPboardType {
+        if desiredType == .tiff {
             let newImage = NSImage(data: carriedData)
             self.image = newImage
-        }else if desiredType == NSFilenamesPboardType {
-            guard let files = pboard.propertyList(forType: NSFilenamesPboardType) as? [Any] else {return false}
-            guard let path = files.first as? String else {return false}
-            NotificationCenter.default.post(name: .filePathChanged, object: path)
-            guard let newImage = NSImage(contentsOfFile: path) else {
+        }else if desiredType == .fileURL {
+            guard let path = pboard.propertyList(forType: .fileURL) as? String else {return false}
+            let url = URL(fileURLWithPath: path).standardized
+            print(url)
+            NotificationCenter.default.post(name: .filePathChanged, object: url.path)
+            guard let newImage = NSImage(contentsOf: url) else {
                 let myPopup: NSAlert = NSAlert()
                 let str = String(format: "Sorry, but I failed to open the file at \"%@\"", path)
                 myPopup.messageText = str
                 myPopup.informativeText = "File Reading Error"
-                myPopup.alertStyle = NSAlertStyle.warning
+                myPopup.alertStyle = .warning
                 myPopup.addButton(withTitle: "OK")
                 myPopup.runModal()
                 return false
