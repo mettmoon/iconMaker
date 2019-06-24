@@ -7,21 +7,21 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		D047C3A522C0F87B006FD45B /* MainMenu.xib in Resources */ = {isa = PBXBuildFile; fileRef = D047C3A422C0F87B006FD45B /* MainMenu.xib */; };
 		D07748AF1DFE3D67008F1F6D /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D07748AE1DFE3D67008F1F6D /* AppDelegate.swift */; };
 		D07748B11DFE3D67008F1F6D /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D07748B01DFE3D67008F1F6D /* ViewController.swift */; };
 		D07748B31DFE3D67008F1F6D /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D07748B21DFE3D67008F1F6D /* Assets.xcassets */; };
-		D07748B61DFE3D67008F1F6D /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D07748B41DFE3D67008F1F6D /* Main.storyboard */; };
 		D07748C01DFE4BF7008F1F6D /* PathTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = D07748BF1DFE4BF7008F1F6D /* PathTextField.swift */; };
 		D07748C21DFE4D62008F1F6D /* NSCImageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D07748C11DFE4D62008F1F6D /* NSCImageView.swift */; };
 		D07748C41DFE5395008F1F6D /* appicon.json in Resources */ = {isa = PBXBuildFile; fileRef = D07748C31DFE5395008F1F6D /* appicon.json */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		D047C3A422C0F87B006FD45B /* MainMenu.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = MainMenu.xib; sourceTree = "<group>"; };
 		D07748AB1DFE3D67008F1F6D /* IconMaker.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = IconMaker.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		D07748AE1DFE3D67008F1F6D /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		D07748B01DFE3D67008F1F6D /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		D07748B21DFE3D67008F1F6D /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
-		D07748B51DFE3D67008F1F6D /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		D07748B71DFE3D67008F1F6D /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		D07748BF1DFE4BF7008F1F6D /* PathTextField.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PathTextField.swift; sourceTree = "<group>"; };
 		D07748C11DFE4D62008F1F6D /* NSCImageView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NSCImageView.swift; sourceTree = "<group>"; };
@@ -64,7 +64,7 @@
 				D07748C31DFE5395008F1F6D /* appicon.json */,
 				D07748C11DFE4D62008F1F6D /* NSCImageView.swift */,
 				D07748B21DFE3D67008F1F6D /* Assets.xcassets */,
-				D07748B41DFE3D67008F1F6D /* Main.storyboard */,
+				D047C3A422C0F87B006FD45B /* MainMenu.xib */,
 				D07748B71DFE3D67008F1F6D /* Info.plist */,
 			);
 			path = IconMaker;
@@ -133,7 +133,7 @@
 			files = (
 				D07748C41DFE5395008F1F6D /* appicon.json in Resources */,
 				D07748B31DFE3D67008F1F6D /* Assets.xcassets in Resources */,
-				D07748B61DFE3D67008F1F6D /* Main.storyboard in Resources */,
+				D047C3A522C0F87B006FD45B /* MainMenu.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -152,17 +152,6 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXSourcesBuildPhase section */
-
-/* Begin PBXVariantGroup section */
-		D07748B41DFE3D67008F1F6D /* Main.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				D07748B51DFE3D67008F1F6D /* Base */,
-			);
-			name = Main.storyboard;
-			sourceTree = "<group>";
-		};
-/* End PBXVariantGroup section */
 
 /* Begin XCBuildConfiguration section */
 		D07748B81DFE3D67008F1F6D /* Debug */ = {

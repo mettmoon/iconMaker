@@ -14,6 +14,9 @@ class ViewController: NSViewController {
     @IBOutlet weak var tfOutput: NSTextField!
     @IBOutlet weak var btnOutput:NSButton!
     @IBOutlet weak var btnConvert:NSButton!
+    @IBOutlet weak var macosCheckButton: NSButton!
+    @IBOutlet weak var iosCheckButton: NSButton!
+    @IBOutlet weak var ipadCheckButton: NSButton!
     
     @IBAction func findOutputButtonPressed(_ sender: Any) {
         let panel = NSOpenPanel()
@@ -32,18 +35,32 @@ class ViewController: NSViewController {
     }
     
     @IBAction func convertButtonPressed(_ sender: Any) {
-        Thread.detachNewThreadSelector(#selector(convert), toTarget: self, with: nil)
-        
+        self.convert()
     }
     @objc func convert(){
         guard let originalImage = self.ivPreview.image else {return}
 //        var resizeImage:NSImage? = nil
+        var checkedItems = [String]()
+        if self.macosCheckButton.state == .on {
+            checkedItems.append("mac")
+        }
+        if self.iosCheckButton.state == .on {
+            checkedItems.append("ios")
+            checkedItems.append("ios-marketing")
+            
+        }
+        if self.ipadCheckButton.state == .on {
+            checkedItems.append("ipad")
+        }
         
         let iconSizeSetPath = Bundle.main.path(forResource: "appicon", ofType: "json")!
         guard let jsonData = try? Data(contentsOf: URL(fileURLWithPath: iconSizeSetPath)) else {return}
         
         guard let object = try? JSONSerialization.jsonObject(with: jsonData, options: JSONSerialization.ReadingOptions.mutableContainers) as? [String:Any] else {return}
-        let imageInfoItems = object["images"] as! [[String:String]]
+        let imageInfoItems = (object["images"] as! [[String:String]]).filter({
+            guard let idiom = $0["idiom"] else{return false}
+            return checkedItems.contains(idiom)
+        })
         
         let directoryPath = String(format: "%@/AppIcon.appiconset", self.tfOutput.stringValue)
         if !FileManager.default.fileExists(atPath: directoryPath) {
@@ -122,15 +139,22 @@ class ViewController: NSViewController {
 extension NSImage {
     func resizedImage(_ size:CGSize, scale ratio:CGFloat) -> NSImage {
         let scaledSize = CGSize(width: size.width * ratio, height: size.height * ratio)
-        let resizeImage = NSImage(size: scaledSize)
-        resizeImage.lockFocus()
+        
+        let rep = NSBitmapImageRep(bitmapDataPlanes: nil, pixelsWide: Int(scaledSize.width), pixelsHigh: Int(scaledSize.height), bitsPerSample: 8, samplesPerPixel: 4, hasAlpha: true, isPlanar: false, colorSpaceName: .calibratedRGB, bytesPerRow: 0, bitsPerPixel: 0)!
+
+        rep.size = scaledSize
         let originalImage = self
         originalImage.size = scaledSize
-        NSGraphicsContext.current?.imageInterpolation = .high
-        let fromRect = NSRect(x: 0, y: 0, width: originalImage.size.width, height: originalImage.size.height)
+        
+        NSGraphicsContext.saveGraphicsState()
+        NSGraphicsContext.current = NSGraphicsContext(bitmapImageRep: rep)
+        
+        let fromRect = NSRect(x: 0, y: 0, width: scaledSize.width, height: scaledSize.height)
         originalImage.draw(at: .zero, from: fromRect, operation: .copy, fraction: 1)
-        resizeImage.unlockFocus()
-        return resizeImage
+        NSGraphicsContext.restoreGraphicsState()
+        let resizedImage = NSImage(size: scaledSize)
+        resizedImage.addRepresentation(rep)
+        return resizedImage
     }
     
 }
