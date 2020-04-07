@@ -1,7 +1,0 @@
-//
-// Prefix header for all source files of the 'iconMaker' target in the 'iconMaker' project
-//
-
-#ifdef __OBJC__
-    #import <Cocoa/Cocoa.h>
-#endif
